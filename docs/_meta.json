@@ -1,0 +1,16 @@
+[
+  {
+    "text": "Journal",
+    "link": "/journal/",
+    "activeMatch": "/journal/"
+  },
+  {
+    "text": "Hello World",
+    "link": "/hello/",
+    "activeMatch": "/hello/"
+  },
+  {
+    "text": "Home",
+    "link": "https://nkid00.name/"
+  }
+]
