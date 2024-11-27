@@ -7,6 +7,11 @@ export default defineConfig({
   markdown: {
     showLineNumbers: true,
   },
+  builderConfig: {
+    output: {
+      assetPrefix: "/journal-static/"
+    }
+  },
   themeConfig: {
     socialLinks: [
       {
