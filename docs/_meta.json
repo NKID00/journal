@@ -1,8 +1,8 @@
 [
   {
     "text": "Journal",
-    "link": "/j/",
-    "activeMatch": "^/j/"
+    "link": "/j",
+    "activeMatch": "^/j(/.*)?$"
   },
   {
     "text": "Friends",
@@ -11,7 +11,7 @@
   },
   {
     "text": "Gadgets",
-    "link": "/g/",
-    "activeMatch": "^/g/"
+    "link": "/g",
+    "activeMatch": "^/g(/.*)?$"
   }
 ]
