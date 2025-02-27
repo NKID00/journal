@@ -9,6 +9,9 @@ export default defineConfig({
   markdown: {
     showLineNumbers: true,
   },
+  route: {
+    cleanUrls: true,
+  },
   globalStyles: path.join(__dirname, "styles/index.scss"),
   themeConfig: {
     lastUpdated: true,

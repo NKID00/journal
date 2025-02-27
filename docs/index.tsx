@@ -13,9 +13,9 @@ export function FakeCounter() {
   return (
     <>
       <p className="text-center">
-        あなたは
+        {"あなたは "}
         <span className="bg-black text-white font-bold">{counter}</span>
-        人目の訪問者です。
+        {" 人目の訪問者です。"}
       </p>
       <p className="text-sm text-center mb-10">
         <a
@@ -61,15 +61,14 @@ export default function () {
       </h1>
       <h2>Hi, this is NKID00.</h2>
       <p>
-        Email: [
-        <a href="mailto:this@nkid00.name" target="_blank">
-          nkid0000 at gmail.com
+        {"Email: "}
+        <a href="mailto:nkid0000@gmail.com" target="_blank">
+          <pre>nkid0000@gmail.com</pre>
         </a>
-        ] or [
+        {" or "}
         <a href="mailto:this@nkid00.name" target="_blank">
-          this at nkid00.name
+          <pre>this@nkid00.name</pre>
         </a>
-        ]
       </p>
       <p>
         {"OpenPGP: "}
