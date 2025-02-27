@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: Libertine;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../docs/public/LinLibertine_R.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Libertine;
+  font-style: normal;
+  font-weight: bold;
+  src: url("../docs/public/LinLibertine_RB.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Libertine;
+  font-style: italic;
+  font-weight: normal;
+  src: url("../docs/public/LinLibertine_RI.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Libertine;
+  font-style: italic;
+  font-weight: bold;
+  src: url("../docs/public/LinLibertine_RBI.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Biolinum;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../docs/public/LinBiolinum_R.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Biolinum;
+  font-style: normal;
+  font-weight: bold;
+  src: url("../docs/public/LinBiolinum_RB.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Biolinum;
+  font-style: italic;
+  font-weight: bold;
+  src: url("../docs/public/LinBiolinum_RI.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Inconsolata;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../docs/public/Inconsolata-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Inconsolata;
+  font-style: normal;
+  font-weight: bold;
+  src: url("../docs/public/Inconsolata-Bold.woff2") format("woff2");
+}
+
+:root {
+  --rp-font-family-base: Biolinum, ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-text: Libertine, ui-serif, serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --rp-font-family-mono: Inconsolata, ui-monospace, monospace,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --rp-c-brand: #0095ff; /* hsl(204deg 100% 50%) */
+  --rp-c-brand-light: #33adff; /* hsl(204deg 100% 60%) */
+  --rp-c-brand-lighter: #66c2ff; /* hsl(204deg 100% 70%) */
+  --rp-c-brand-dark: #0077ff; /* hsl(212deg 100% 50%) */
+  --rp-c-brand-darker: #005fcc; /* hsl(212deg 100% 40%) */
+  --rp-c-brand-tint: rgba(127, 163, 255, 0.16);
+}
+
+.rspress-doc p {
+  font-family: var(--font-family-text);
+}
+
+.rspress-doc code,
+.rspress-doc pre {
+  font-family: var(--rp-font-family-mono);
+}
+
+.rspress-doc a {
+  text-decoration: none;
+  background-image: linear-gradient(
+      var(--rp-c-brand-lighter),
+      var(--rp-c-brand-lighter)
+    ),
+    linear-gradient(var(--rp-c-bg-mute), var(--rp-c-bg-mute));
+  background-size: 0% 10%, 100% 10%;
+  background-position: 0 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.08s;
+}
+
+.rspress-doc a:hover {
+  background-size: 100% 10%, 100% 10%;
+  transition: background-size 0.15s;
+}

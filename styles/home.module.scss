@@ -1,0 +1,17 @@
+@media (max-width: 960px) {
+  .home {
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .home {
+    padding: 0 5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .home {
+    padding: 0 10rem;
+  }
+}

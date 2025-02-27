@@ -1,16 +1,17 @@
 [
   {
     "text": "Journal",
-    "link": "/journal/",
-    "activeMatch": "/journal/"
+    "link": "/j/",
+    "activeMatch": "^/j/"
   },
   {
-    "text": "Hello World",
-    "link": "/hello/",
-    "activeMatch": "/hello/"
+    "text": "Friends",
+    "link": "/friends",
+    "activeMatch": "^/friends(/|.html)?$"
   },
   {
-    "text": "Home",
-    "link": "https://nkid00.name/"
+    "text": "Gadgets",
+    "link": "/g/",
+    "activeMatch": "^/g/"
   }
 ]

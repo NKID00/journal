@@ -19,7 +19,8 @@
   "include": [
     "docs",
     "theme",
-    "rspress.config.ts"
+    "rspress.config.ts",
+    "global.d.ts"
   ],
   "mdx": {
     "checkMdx": true
