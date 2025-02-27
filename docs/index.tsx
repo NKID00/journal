@@ -1,7 +1,7 @@
 import styles from "../styles/home.module.scss";
 
 export const frontmatter = {
-  pageType: "doc"
+  pageType: "doc",
 };
 
 export function FakeCounter() {
@@ -61,16 +61,23 @@ export default function () {
       </h1>
       <h2>Hi, this is NKID00.</h2>
       <p>
+        Email: [
         <a href="mailto:this@nkid00.name" target="_blank">
-          Email: [nkid0000 at gmail.com] or [this at nkid00.name]
+          nkid0000 at gmail.com
         </a>
+        ] or [
+        <a href="mailto:this@nkid00.name" target="_blank">
+          this at nkid00.name
+        </a>
+        ]
       </p>
       <p>
+        {"OpenPGP: "}
         <a
           href="https://keys.openpgp.org/vks/v1/by-fingerprint/C6A50DCBB4ADED6EF00332D28D700033FEDCCA3D"
           target="_blank"
         >
-          OpenPGP: <pre>8D700033FEDCCA3D</pre>
+          <pre>8D700033FEDCCA3D</pre>
         </a>
       </p>
       <Counter />
