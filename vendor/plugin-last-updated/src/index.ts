@@ -2,7 +2,7 @@ import type { RspressPlugin } from '@rspress/shared';
 import { execa } from 'execa';
 
 function transform(timestamp: number, lang: string) {
-  return new Date(timestamp).toLocaleString(lang || 'zh');
+  return new Date(timestamp).toISOString().slice(0, 10);
 }
 
 async function getGitLastUpdatedTimeStamp(filePath: string) {
@@ -26,7 +26,7 @@ async function getGitLastUpdatedTimeStamp(filePath: string) {
  */
 export function pluginLastUpdated(): RspressPlugin {
   return {
-    name: '@rspress/plugin-last-updated',
+    name: '@rspress/plugin-last-updated1',
     async extendPageData(pageData) {
       const { _filepath, lang } = pageData;
       const lastUpdated = await getGitLastUpdatedTimeStamp(_filepath);

@@ -8,7 +8,7 @@ const Layout = () => (
           <p>EOF</p>
           <p className="py-1">
             <a href="https://creativecommons.org/licenses/by/4.0/">
-              <img src="/by.svg" className="w-16" />
+              <img src="/static/img/by.svg" alt="CC BY 4.0" className="w-18 text-center" />
             </a>
           </p>
           <p>::nkid00::</p>
