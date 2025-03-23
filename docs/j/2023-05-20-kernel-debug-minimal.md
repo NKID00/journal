@@ -1,6 +1,6 @@
 ---
 title: "构建最小 Linux 内核调试环境"
-date: 2023-05-20T14:56:24+08:00
+date: 2023-05-20
 tags: ["GNU/Linux", "QEMU", "Kernel", "GDB"]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "在 Debian 上编译最新的 Linux 内核"
-date: 2023-05-18T15:49:11+08:00
+date: 2023-05-18
 tags: ["GNU/Linux", "Debian", "Kernel"]
 ---
 

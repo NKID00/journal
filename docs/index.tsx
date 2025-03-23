@@ -2,6 +2,7 @@ import styles from "../styles/home.module.scss";
 
 export const frontmatter = {
   pageType: "doc",
+  date: "2025-02-27",
 };
 
 export function FakeCounter() {

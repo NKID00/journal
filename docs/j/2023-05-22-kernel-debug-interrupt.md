@@ -1,6 +1,6 @@
 ---
 title: "GDB 步进调试内核时遇到中断的解决办法"
-date: 2023-05-22T21:23:11+08:00
+date: 2023-05-22
 tags: ["GNU/Linux", "Kernel", "GDB"]
 ---
 

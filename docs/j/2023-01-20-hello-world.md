@@ -1,6 +1,6 @@
 ---
 title: "Yes, this is the very first post."
-date: 2023-01-20T20:40:09+08:00
+date: 2023-01-20
 tags: ["Hello", "World"]
 ---
 

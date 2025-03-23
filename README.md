@@ -30,8 +30,6 @@ npm run preview
 
 ## Copying
 
-`vendor/plugin-last-updated` was borrowed from `web-infra-dev/rspress`, modified and licensed under MIT license.
-
 Markdown contents in `docs/` are licensed under CC BY 4.0.
 
-Any other files are licensed under MIT license.
+Other files are licensed under MIT license.

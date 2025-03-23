@@ -1,6 +1,6 @@
 ---
 title: "生成 Qt 项目的编译数据库（compile_commands.json）"
-date: 2023-01-25T23:11:39+08:00
+date: 2023-01-25
 tags: ["GNU/Linux", "Qt"]
 ---
 
