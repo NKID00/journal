@@ -1,6 +1,7 @@
 import * as path from "node:path";
 import { defineConfig } from "rspress/config";
 import katex from "rspress-plugin-katex";
+import { pluginJournalIndexPage } from "rspress-plugin-journal-index-page";
 
 export default defineConfig({
   root: path.join(__dirname, "docs"),
@@ -27,5 +28,5 @@ export default defineConfig({
   mediumZoom: {
     selector: "",
   },
-  plugins: [katex()],
+  plugins: [katex(), pluginJournalIndexPage({ journalDir: path.join(__dirname, 'docs/j'), routePath: '/j' })],
 });
