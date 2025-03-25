@@ -67,8 +67,8 @@ export default function () {
           <pre>nkid0000@gmail.com</pre>
         </a>
         {" or "}
-        <a href="mailto:this@nkid00.name" target="_blank">
-          <pre>this@nkid00.name</pre>
+        <a href="mailto:nkid00@nk0.me" target="_blank">
+          <pre>nkid00@nk0.me</pre>
         </a>
       </p>
       <p>
