@@ -12,6 +12,9 @@ export default defineConfig({
   route: {
     cleanUrls: true,
   },
+  ssg: {
+    strict: true,
+  },
   globalStyles: path.join(__dirname, "styles/index.scss"),
   themeConfig: {
     lastUpdated: false,
@@ -25,8 +28,6 @@ export default defineConfig({
       },
     ],
   },
-  mediumZoom: {
-    selector: "",
-  },
+  mediumZoom: false,
   plugins: [katex(), pluginJournalIndexPage({ journalDir: path.join(__dirname, 'docs/j'), routePath: '/j' })],
 });
