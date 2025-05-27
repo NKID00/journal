@@ -2,6 +2,8 @@ import styles from "../styles/home.module.scss";
 
 export const frontmatter = {
   pageType: "doc",
+  sidebar: false,
+  outline: false,
   date: "2025-02-27",
 };
 
@@ -32,7 +34,7 @@ export function FakeCounter() {
 
 export function Counter() {
   return (
-    <div className="mt-10 flex flex-row justify-center">
+    <div className="my-10 flex flex-row justify-center">
       <a
         className="w-[50%] flex flex-row justify-center"
         href="https://github.com/journey-ad/Moe-counter"
@@ -52,32 +54,29 @@ export default function () {
   return (
     <div className={styles.home}>
       <FakeCounter />
-      <h1 className="font-bold text-3xl mb-10">
+      <h1 className="font-mono font-bold text-3xl mb-10">
         <img
           src="/static/img/avatar_light.webp"
           className="w-20 mr-10 inline"
           alt="Avatar"
         />
-        <pre>NKID00</pre>
+        NKID00
       </h1>
       <h2>Hi, this is NKID00.</h2>
       <p>
         {"Email: "}
-        <a href="mailto:nkid0000@gmail.com" target="_blank">
-          <pre>nkid0000@gmail.com</pre>
-        </a>
+        <code>nkid0000@gmail.com</code>
         {" or "}
-        <a href="mailto:nkid00@nk0.me" target="_blank">
-          <pre>nkid00@nk0.me</pre>
-        </a>
+        <code>nkid00@nk0.me</code>
       </p>
       <p>
         {"OpenPGP: "}
         <a
           href="https://keys.openpgp.org/vks/v1/by-fingerprint/C6A50DCBB4ADED6EF00332D28D700033FEDCCA3D"
           target="_blank"
+          className="font-mono"
         >
-          <pre>8D700033FEDCCA3D</pre>
+          8D700033FEDCCA3D
         </a>
       </p>
       <Counter />

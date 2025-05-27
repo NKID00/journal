@@ -78,6 +78,10 @@
   --rp-c-brand-tint: rgba(127, 163, 255, 0.16);
 }
 
+.rspress-doc-container {
+  min-height: calc(100vh - var(--rp-nav-height));
+}
+
 .rspress-doc p {
   font-family: var(--font-family-text);
 }
@@ -104,4 +108,10 @@
 .rspress-doc a:hover {
   background-size: 100% 10%, 100% 10%;
   transition: background-size 0.15s;
+}
+
+@theme {
+  --font-sans: var(--rp-font-family-base);
+  --font-serif: var(--font-family-text);
+  --font-mono: var(--rp-font-family-mono);
 }

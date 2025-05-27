@@ -11,6 +11,8 @@ export function pluginJournalIndexPage(options: { journalDir: string, routePath:
       let content: string = stripIndent`
         ---
         title: Index
+        sidebar: false
+        outline: false
         ---
 
         import { LinkCard } from '@theme';
