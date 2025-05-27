@@ -1,14 +1,17 @@
-import type { RspressPlugin } from '@rspress/shared';
-import { stripIndent } from 'common-tags';
-import { open, readdir } from 'fs/promises';
-import { join } from 'path';
-import { cwd } from 'process';
+import type { RspressPlugin } from "@rspress/shared";
+import { stripIndent } from "common-tags";
+import { open, readdir } from "fs/promises";
+import { join } from "path";
 
-export function pluginJournalIndexPage(options: { journalDir: string, routePath: string }): RspressPlugin {
+export function pluginJournalIndexPage(options: {
+  journalDir: string;
+  routePath: string;
+}): RspressPlugin {
   return {
-    name: 'plugin-journal-index-page',
+    name: "plugin-journal-index-page",
     async addPages(config) {
-      let content: string = stripIndent`
+      let content: string =
+        stripIndent`
         ---
         title: Index
         sidebar: false
@@ -16,14 +19,14 @@ export function pluginJournalIndexPage(options: { journalDir: string, routePath:
         ---
 
         import { LinkCard } from '@theme';
-      ` + '\n\n';
+      ` + "\n\n";
       let journals = [];
       const files = await readdir(options.journalDir, { withFileTypes: true });
       for (const file of files) {
         const extensionRe = /(?:\.mdx?|\.tsx)$/;
         if (file.isFile() && extensionRe.test(file.name)) {
           const handle = await open(join(options.journalDir, file.name));
-          const data = await handle.readFile({ encoding: 'utf-8' });
+          const data = await handle.readFile({ encoding: "utf-8" });
           const titleMatch = /title:\s*(.*)/.exec(data);
           const lastUpdatedMatch = /date:\s*(.*)/.exec(data);
           await handle.close();
@@ -42,36 +45,42 @@ export function pluginJournalIndexPage(options: { journalDir: string, routePath:
 
           let lastUpdatedTime = "";
           if (lastUpdatedMatch) {
-            lastUpdatedTime = new Date(lastUpdatedMatch[1]).toISOString().slice(0, 10);
+            lastUpdatedTime = new Date(lastUpdatedMatch[1])
+              .toISOString()
+              .slice(0, 10);
           }
 
-          const path = join(options.routePath, file.name.replace(extensionRe, ''));
+          const path = join(
+            options.routePath,
+            file.name.replace(extensionRe, "")
+          );
 
-          journals.push({ path, title, date, lastUpdatedTime })
+          journals.push({ path, title, date, lastUpdatedTime });
         }
       }
       journals.sort((a, b) => b.date.valueOf() - a.date.valueOf());
       for (const journal of journals) {
-        let description = journal.date.toISOString().slice(0, 10);
-        if (journal.lastUpdatedTime) {
+        const date = journal.date.toISOString().slice(0, 10);
+        let description = date;
+        if (journal.lastUpdatedTime && date !== journal.lastUpdatedTime) {
           description += ` (updated: ${journal.lastUpdatedTime})`;
         }
-        content += stripIndent`
+        content +=
+          stripIndent`
             <LinkCard
               href="${journal.path}"
               title=${journal.title}
               description="${description}"
             />
             <br />
-          ` + '\n';
+          ` + "\n";
       }
-      console.log(content);
       return [
         {
-          routePath: join(options.routePath, 'index.html'),
+          routePath: join(options.routePath, "index.html"),
           content,
-        }
-      ]
+        },
+      ];
     },
   };
 }
