@@ -10,7 +10,10 @@ export const frontmatter = {
 };
 
 const bgContext = createContext(
-  null as React.RefObject<HTMLDivElement | null> | null
+  null as {
+    refContainer: React.RefObject<HTMLDivElement | null>;
+    refBg: React.RefObject<HTMLDivElement | null>;
+  } | null
 );
 
 function isMobile(): boolean {
@@ -58,7 +61,7 @@ function Item({
   year?: string;
   children?: React.ReactNode;
 }) {
-  const ref = useContext(bgContext);
+  const ctx = useContext(bgContext);
   return (
     <div
       className="relative z-10 md:text-lg py-4 md:py-2 md:px-4"
@@ -67,12 +70,16 @@ function Item({
           return;
         }
         const rect = e.currentTarget.getBoundingClientRect();
-        const style = ref?.current?.style;
+        const style = ctx?.refBg?.current?.style;
         if (style) {
+          const rectContainer =
+            ctx?.refContainer?.current?.getBoundingClientRect();
           style.backgroundColor = "var(--rp-c-bg-mute)";
           style.filter = "";
-          style.top = `${rect.top + window.scrollY}px`;
-          style.left = `${rect.left + window.scrollX}px`;
+          style.left = `${
+            rect.left - (rectContainer ? rectContainer.left : 0)
+          }px`;
+          style.top = `${rect.top - (rectContainer ? rectContainer.top : 0)}px`;
           style.width = `${rect.width}px`;
           style.height = `${rect.height}px`;
         }
@@ -81,7 +88,7 @@ function Item({
         if (isMobile()) {
           return;
         }
-        const style = ref?.current?.style;
+        const style = ctx?.refBg?.current?.style;
         if (style) {
           style.backgroundColor = "transparent";
           style.filter = "blur(var(--blur-3xl))";
@@ -104,13 +111,14 @@ function Item({
 }
 
 export default function () {
-  const ref = useRef(null);
+  const refContainer = useRef(null);
+  const refBg = useRef(null);
   return (
-    <bgContext.Provider value={ref}>
-      <div className={`mb-[8rem] ${styles.cv}`}>
+    <bgContext.Provider value={{ refContainer, refBg }}>
+      <div className={`relative mb-[8rem] ${styles.cv}`} ref={refContainer}>
         <div
           className="absolute z-0 bg-transparent transition-all duration-50 rounded-xl"
-          ref={ref}
+          ref={refBg}
         />
         <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-6 md:gap-0 my-4 md:m-8 pb-4">
           <span className="text-4xl font-bold whitespace-nowrap">Jiaqi Wu</span>
