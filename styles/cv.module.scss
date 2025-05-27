@@ -1,0 +1,20 @@
+
+@media (max-width: 960px) {
+  .cv {
+    padding: 0 1rem 0 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .cv {
+    padding: 0 5rem 0 5rem;
+  }
+}
+
+.cv p {
+  margin-bottom: 0.5rem;
+}
+
+.cv p:last-of-type {
+  margin-bottom: 0;
+}
