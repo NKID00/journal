@@ -115,3 +115,5 @@
   --font-serif: var(--font-family-text);
   --font-mono: var(--rp-font-family-mono);
 }
+
+@custom-variant dark (&:where(.dark, .dark *));

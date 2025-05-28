@@ -37,7 +37,7 @@ const linkIcon = (
     viewBox="0 0 20 20"
     xmlns="http://www.w3.org/2000/svg"
     fill="currentColor"
-    className="w-[0.8rem] h-[0.8rem] text-violet-700"
+    className="w-[0.8rem] h-[0.8rem] text-violet-700 dark:text-cyan-300"
   >
     <title>Website</title>
     <path d="M -2,-2 H 22 V 22 H -2 Z" fill="none" />
@@ -52,7 +52,7 @@ const githubIcon = (
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
     fill="currentColor"
-    className="w-[0.8rem] h-[0.8rem] text-violet-700"
+    className="w-[0.8rem] h-[0.8rem] text-violet-700 dark:text-cyan-300"
   >
     <title>GitHub</title>
     <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
@@ -168,7 +168,10 @@ export default function () {
   const refBg = useRef(null);
   return (
     <bgContext.Provider value={{ refContainer, refBg }}>
-      <div className={`relative mb-[8rem] ${styles.cv}`} ref={refContainer}>
+      <div
+        className={`font-serif relative mb-[8rem] ${styles.cv}`}
+        ref={refContainer}
+      >
         <div
           className="absolute z-0 bg-transparent transition-all duration-50 rounded-xl"
           ref={refBg}
@@ -221,8 +224,9 @@ export default function () {
             <ul>
               <li>
                 JIT interpreter targets x86_64 and WebAssembly (runs in
-                browser). Compiler targets LLVM IR.
+                browser).
               </li>
+              <li>Compiler targets LLVM IR.</li>
             </ul>
           </Item>
           <Item
@@ -241,8 +245,8 @@ export default function () {
                 Analysis, Unique Implication Point and Watched Literals.
               </li>
               <li>
-                Developed an algorithm for the Minesweeper game via CSP Solving
-                based on this SAT Solver.
+                Developed an algorithm for the Minesweeper via CSP Solving with
+                this SAT Solver.
               </li>
               <li>
                 Written in Rust, compiles to WebAssembly and runs in browser.
@@ -297,7 +301,10 @@ export default function () {
             year="2023 - 2024"
           >
             <ul>
-              <li>Has a capacity of 34 TB, serving on-campus users.</li>
+              <li>
+                Expanded capacity to 34 TB, implemented automated deduplication
+                and traffic monitoring, serving on-campus users.
+              </li>
             </ul>
           </Item>
         </Section>
@@ -305,7 +312,7 @@ export default function () {
           <Item title="President of Qingyou Studio" year="2024.6 - 2025.6">
             <p>
               Qingyou Studio (“<span className="text-sm">青柚工作室</span>”) is
-              a student association directed by the IT Center.
+              the student association directed by IT Center of NJUPT.
             </p>
           </Item>
           <Item
@@ -317,28 +324,28 @@ export default function () {
         </Section>
         <Section title="Talks">
           <Item>
-            <p>
+            <div>
               Short talks on meetings of Student Association of Science and
               Technology, Linux User Group and Qingyou Studio.
-              <ul>
+              <ul className="pl-8">
                 <li>Dependent type theory</li>
                 <li>Formal reasoning</li>
                 <li>Rust programming</li>
               </ul>
-            </p>
+            </div>
           </Item>
           <Item>
-            <p>
+            <div>
               Public lectures on events hosted by Student Association of Science
               and Technology.
-              <ul>
+              <ul className="pl-8">
                 <li>
                   C programming life-saver (“C{" "}
                   <span className="text-sm">语言急救车</span>”)
                 </li>
                 <li>Git introduction</li>
               </ul>
-            </p>
+            </div>
           </Item>
         </Section>
       </div>
