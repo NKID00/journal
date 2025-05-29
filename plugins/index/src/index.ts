@@ -18,7 +18,7 @@ export function pluginJournalIndexPage(options: {
         outline: false
         ---
 
-        import { LinkCard } from '@theme';
+        import { Link } from '/src/components/Link';
       ` + "\n\n";
       let journals = [];
       const files = await readdir(options.journalDir, { withFileTypes: true });
@@ -67,12 +67,11 @@ export function pluginJournalIndexPage(options: {
         }
         content +=
           stripIndent`
-            <LinkCard
+            <Link
               href="${journal.path}"
               title=${journal.title}
               description="${description}"
             />
-            <br />
           ` + "\n";
       }
       return [
