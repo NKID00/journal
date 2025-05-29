@@ -72,7 +72,7 @@ export function pluginJournalIndexPage(options: {
               title=${journal.title}
               description="${description}"
             />
-          ` + "\n";
+          ` + "\n\n";
       }
       return [
         {
